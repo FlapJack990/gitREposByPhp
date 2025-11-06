@@ -21,12 +21,14 @@ include './inc/select.php';
             <form action="index.php" method="POST">
                 <input class="get-input" type="text" name="gitUser" placeholder="Github Username">
                 <div class="error"><?php echo $errors['gitUserError']?></div>
-                <input class="get-button" type="submit" name="submit" value="Get Repos">
                 <span class="showButton">Show Data</span>
+                <input class="get-git" type="submit" name="get" value="Get repos">
+
+                <img src="./imgs/GitHub__headpic.jpg" alt="">
             </form>
         </div>
         <div class="show-data">
-            <span>No Data To Show</span>
+            <span name="DataData">No Data To Show</span>
         </div>
     </div>
     <script src="./js/fun.js"></script>

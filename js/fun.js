@@ -3,6 +3,7 @@ let getButton = document.querySelector(".showButton");
 let reposData = document.querySelector(".show-data");
 
 
+
 getButton.onclick = function () {
     getRepos();
 }
@@ -47,6 +48,16 @@ function getRepos() {
                     reposData.appendChild(mainDiv);
                 });
             });  
+        
+        fetch("save_repo.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                name: repo.name,
+                stars: repo.stargazers_count,
+                url: `https://github.com/${theInput.value}/${repo.name}`
+            })
+        });
     }
 
 }
